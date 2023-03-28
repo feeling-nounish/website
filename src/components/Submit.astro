@@ -1,0 +1,24 @@
+<a
+  id="submit"
+  href="https://twymmpag0dl.typeform.com/to/byBeswsg"
+  target="_blank"
+  rel="noopener noreferrer"
+  draggable={false}
+  class="fixed max-sm:text-lg z-10 right-8 bottom-8 text-xl font-semibold hover:underline"
+  >Submit a project</a
+>
+
+<script>
+  const submit = document.getElementById("submit");
+
+  function resize() {
+    if (submit) {
+      if (window.innerWidth < 600) {
+        submit.innerHTML = "Submit";
+      } else submit.innerHTML = "Submit a project";
+    }
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+</script>

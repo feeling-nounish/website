@@ -1,0 +1,23 @@
+<a
+  id="made-by"
+  href="https://twitter.com/SamScolari"
+  target="_blank"
+  rel="noopener noreferrer"
+  draggable={false}
+  class="fixed select-none z-10 max-sm:text-lg left-8 bottom-8 pointer-events-auto text-xl font-semibold hover:underline"
+  >Made with ⌐◨-◨ by Sam</a
+>
+<script>
+  const madeBy = document.getElementById("made-by");
+
+  function resize() {
+    if (madeBy) {
+      if (window.innerWidth < 600) {
+        madeBy.innerHTML = "Made by Sam.⌐◨-◨";
+      } else madeBy.innerHTML = "Made with ⌐◨-◨ by Sam";
+    }
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+</script>

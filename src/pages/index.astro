@@ -1,83 +1,44 @@
+---
+import Background from "../components/Background.astro";
+import JumpIn from "../components/JumpIn.astro";
+import MadeBy from "../components/MadeBy.astro";
+import Noggle from "../components/Noggle.astro";
+import Socials from "../components/Socials.astro";
+import Submit from "../components/Submit.astro";
+import Title from "../components/Title.astro";
+---
+
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full overflow-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/webp" href="/logo.webp" />
+    <link rel="preload" type="video/webm" href="/background.webm" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/fonts/LondrinaSolid.ttf"
+      as="font"
+      crossorigin="anonymous"
     />
     <meta name="generator" content={Astro.generator} />
     <title>I'm feeling Nounish</title>
     <style>
-      h1 {
-        font-family: "Londrina Solid", cursive;
+      @font-face {
+        font-family: LondrinaSolid;
+        font-weight: 400;
+        src: url(/fonts/LondrinaSolid.ttf) format("truetype");
       }
     </style>
   </head>
-  <body
-    class="bg-[#43faa7] text-[#040404] h-full flex items-center justify-center pointer-events-none p-8"
-  >
-    <a id="noggle" href="/" draggable={false}>
-      <img
-        src="/noggle.svg"
-        alt="I'm feeling Nounish"
-        class="fixed top-8 left-8 select-none w-16 hover:scale-110 pointer-events-auto transition-transform duration-500 cursor-pointer"
-      /></a
-    >
-    <a
-      id="twitter"
-      href="https://twitter.com/feelingnounish"
-      target="_blank"
-      rel="noopener noreferrer"
-      draggable={false}
-      class="select-none"
-    >
-      <img
-        src="/twitter.svg"
-        alt="I'm feeling Nounish Twitter account"
-        class="w-8 h-8 fixed top-8 right-8 hover:scale-110 pointer-events-auto transition-transform duration-500 cursor-pointer"
-      />
-    </a>
-    <h1
-      class="text-8xl font-semibold text-center max-lg:text-6xl max-sm:text-5xl"
-    >
-      I'm feeling Nounish
-    </h1>
-    <div id="jump-in" class="fixed bottom-64 flex items-end gap-2 select-none">
-      <p class="text-2xl font-bold -mb-2.5">Jump in!</p>
-      <img
-        src="/arrow.svg"
-        alt="An arrow pointing at a button"
-        draggable={false}
-      />
-    </div>
-    <a
-      id="sam"
-      href="https://twitter.com/SamScolari"
-      target="_blank"
-      rel="noopener noreferrer"
-      draggable={false}
-      class="fixed select-none left-8 bottom-8 pointer-events-auto text-xl font-semibold hover:underline"
-      >Made with ⌐◨-◨ by Sam</a
-    >
-    <a
-      id="submit"
-      href="https://twymmpag0dl.typeform.com/to/byBeswsg"
-      target="_blank"
-      rel="noopener noreferrer"
-      draggable={false}
-      class="fixed right-8 bottom-8 pointer-events-auto text-xl font-semibold hover:underline"
-      >Submit a project</a
-    >
-    <video
-      src="/background.webm"
-      poster="/placeholder.webp"
-      class="w-full h-full fixed -z-10 object-cover object-center pointer-events-auto cursor-pointer"
-    ></video>
+  <body class="bg-[#43faa7] text-[#040404] h-full overflow-hidden">
+    <Noggle />
+    <Socials />
+    <Title />
+    <JumpIn />
+    <MadeBy />
+    <Submit />
+    <Background />
     <script>
       const links = [
         "https://nouns.wtf",
@@ -135,23 +96,27 @@
 
       const video = document.getElementsByTagName("video")[0];
 
+      video.ontouchstart = () => {
+        video.play();
+      };
+
       video.onclick = () => {
         video.play();
       };
 
-      const h1 = document.getElementsByTagName("h1")[0];
+      const title = document.getElementById("title");
       const noggle = document.getElementById("noggle");
       const jumpIn = document.getElementById("jump-in");
-      const sam = document.getElementById("sam");
-      const twitter = document.getElementById("twitter");
+      const madeBy = document.getElementById("made-by");
+      const twitter = document.getElementById("socials");
       const submit = document.getElementById("submit");
 
-      video.addEventListener("timeupdate", (e) => {
+      video.addEventListener("timeupdate", () => {
         if (video.currentTime > 0.6) {
-          h1.style.display = "none";
+          title.style.display = "none";
           noggle.style.display = "none";
           jumpIn.style.display = "none";
-          sam.style.display = "none";
+          madeBy.style.display = "none";
           twitter.style.display = "none";
           submit.style.display = "none";
         }
@@ -169,10 +134,10 @@
         video.currentTime = 0;
         video.pause();
 
-        h1.style.display = "flex";
+        title.style.display = "flex";
         noggle.style.display = "flex";
         jumpIn.style.display = "flex";
-        sam.style.display = "flex";
+        madeBy.style.display = "flex";
         twitter.style.display = "flex";
         submit.style.display = "flex";
       };
