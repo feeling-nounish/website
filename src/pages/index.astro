@@ -96,13 +96,8 @@ import Title from "../components/Title.astro";
 
       const video = document.getElementsByTagName("video")[0];
 
-      video.ontouchstart = () => {
-        video.play();
-      };
-
-      video.onclick = () => {
-        video.play();
-      };
+      video.addEventListener("touchstart", () => video.play());
+      video.addEventListener("click", () => video.play());
 
       const title = document.getElementById("title");
       const noggle = document.getElementById("noggle");
@@ -110,14 +105,6 @@ import Title from "../components/Title.astro";
       const madeBy = document.getElementById("made-by");
       const twitter = document.getElementById("socials");
       const submit = document.getElementById("submit");
-
-      title.onclick = () => {
-        alert("bad");
-      };
-
-      title.ontouchstart = () => {
-        alert("bad");
-      };
 
       video.addEventListener("timeupdate", () => {
         if (video.currentTime > 0.6) {
@@ -130,7 +117,7 @@ import Title from "../components/Title.astro";
         }
       });
 
-      video.onended = () => {
+      video.addEventListener("ended", () => {
         const website = window.open(
           links[Math.floor(Math.random() * links.length)]
         );
@@ -148,7 +135,7 @@ import Title from "../components/Title.astro";
         madeBy.style.display = "flex";
         twitter.style.display = "flex";
         submit.style.display = "flex";
-      };
+      });
     </script>
   </body>
 </html>
