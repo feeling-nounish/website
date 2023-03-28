@@ -96,14 +96,7 @@ import Title from "../components/Title.astro";
 
       const video = document.getElementsByTagName("video")[0];
 
-      //   video.addEventListener("touchstart", () => {
-      //     alert("start");
-      //     video.play();
-      //   });
-      video.addEventListener("click", () => {
-        alert("start 2");
-        video.play();
-      });
+      video.addEventListener("click", () => video.play());
 
       const title = document.getElementById("title");
       const noggle = document.getElementById("noggle");
