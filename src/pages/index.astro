@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>I'm feeling Nounish</title>
+    <style>
+      h1 {
+        font-family: "Londrina Solid", cursive;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#43faa7] text-[#040404] h-full flex items-center justify-center pointer-events-none p-8"
+  >
+    <a id="noggle" href="/" draggable={false}>
+      <img
+        src="/noggle.svg"
+        alt="I'm feeling Nounish"
+        class="fixed top-8 left-8 select-none w-16 hover:scale-110 pointer-events-auto transition-transform duration-500 cursor-pointer"
+      /></a
+    >
+    <a
+      id="twitter"
+      href="https://twitter.com/feelingnounish"
+      target="_blank"
+      rel="noopener noreferrer"
+      draggable={false}
+      class="select-none"
+    >
+      <img
+        src="/twitter.svg"
+        alt="I'm feeling Nounish Twitter account"
+        class="w-8 h-8 fixed top-8 right-8 hover:scale-110 pointer-events-auto transition-transform duration-500 cursor-pointer"
+      />
+    </a>
+    <h1
+      class="text-8xl font-semibold text-center max-lg:text-6xl max-sm:text-5xl"
+    >
+      I'm feeling Nounish
+    </h1>
+    <div id="jump-in" class="fixed bottom-64 flex items-end gap-2 select-none">
+      <p class="text-2xl font-bold -mb-2.5">Jump in!</p>
+      <img
+        src="/arrow.svg"
+        alt="An arrow pointing at a button"
+        draggable={false}
+      />
+    </div>
+    <a
+      id="sam"
+      href="https://twitter.com/SamScolari"
+      target="_blank"
+      rel="noopener noreferrer"
+      draggable={false}
+      class="fixed select-none left-8 bottom-8 pointer-events-auto text-xl font-semibold hover:underline"
+      >Made with ⌐◨-◨ by Sam</a
+    >
+    <a
+      id="submit"
+      href="https://twymmpag0dl.typeform.com/to/byBeswsg"
+      target="_blank"
+      rel="noopener noreferrer"
+      draggable={false}
+      class="fixed right-8 bottom-8 pointer-events-auto text-xl font-semibold hover:underline"
+      >Submit a project</a
+    >
+    <video
+      src="/background.webm"
+      poster="/placeholder.webp"
+      class="w-full h-full fixed -z-10 object-cover object-center pointer-events-auto cursor-pointer"
+    ></video>
+    <script>
+      const links = [
+        "https://nouns.wtf",
+        "https://nouns.gg",
+        "https://nounish.world",
+        "https://nounsai.wtf",
+        "https://noundation.wtf",
+        "https://noggles.wtf",
+        "https://nouns.build",
+        "https://prop.house",
+        "https://pog.nouns.gg",
+        "https://thatsgnar.ly",
+        "https://gnars.wtf",
+        "https://houseofnouns.xyz/",
+        "https://lilnouns.wtf/",
+        "https://purple.construction/",
+        "https://nounsagora.com/",
+        "https://zerobrand.co/",
+        "https://nounsvision.com/",
+        "https://nouns.substack.com/",
+        "https://nns.xyz/",
+        "https://www.federation.wtf/",
+        "https://auctions.wtf/",
+        "https://nounish-button.vercel.app/",
+        "https://www.nounsapp.wtf/",
+        "https://www.nogglefactory.wtf/",
+        "https://alps.wtf/",
+        "https://nouns-crystal-ball.netlify.app/",
+        "https://dune.com/hildobby/nouns",
+        "https://www.figma.com/community/plugin/1045020359359636829/Nouns",
+        "https://lostnouns.wtf/",
+        "https://nounsense.xyz/",
+        "https://nounsarchive.wtf/",
+        "https://omega.build/",
+        "https://art.haus/",
+        "https://tings.wtf/",
+        "https://nouns.center/",
+        "https://composables.wtf/",
+        "https://beacons.ai/thenounsquare",
+        "https://nouns.wtf/playground",
+        "https://www.imdb.com/title/tt21823412/",
+        "https://www.youtube.com/watch?v=t7BrqzAsUD8",
+        "https://www.youtube.com/watch?v=O1iA8kQul4o",
+        "https://twitter.com/nouns_stories",
+        "https://twitter.com/0xigami",
+        "https://twitter.com/ripe0x",
+        "https://twitter.com/NounsOS",
+        "https://twitter.com/messhup",
+        "https://twitter.com/punk4156",
+        "https://twitter.com/nounsdao",
+        "https://twitter.com/punk4156/status/1455186180698423297",
+        "https://www.youtube.com/watch?v=oa79nN4gMPs",
+        "https://www.youtube.com/watch?v=lOzCA7bZG_k",
+      ];
+
+      const video = document.getElementsByTagName("video")[0];
+
+      video.onclick = () => {
+        video.play();
+      };
+
+      const h1 = document.getElementsByTagName("h1")[0];
+      const noggle = document.getElementById("noggle");
+      const jumpIn = document.getElementById("jump-in");
+      const sam = document.getElementById("sam");
+      const twitter = document.getElementById("twitter");
+      const submit = document.getElementById("submit");
+
+      video.addEventListener("timeupdate", (e) => {
+        if (video.currentTime > 0.6) {
+          h1.style.display = "none";
+          noggle.style.display = "none";
+          jumpIn.style.display = "none";
+          sam.style.display = "none";
+          twitter.style.display = "none";
+          submit.style.display = "none";
+        }
+      });
+
+      video.onended = () => {
+        const website = window.open(
+          links[Math.floor(Math.random() * links.length)]
+        );
+
+        if (website) {
+          website.document.body.style.background = "white";
+        }
+
+        video.currentTime = 0;
+        video.pause();
+
+        h1.style.display = "flex";
+        noggle.style.display = "flex";
+        jumpIn.style.display = "flex";
+        sam.style.display = "flex";
+        twitter.style.display = "flex";
+        submit.style.display = "flex";
+      };
+    </script>
+  </body>
+</html>
