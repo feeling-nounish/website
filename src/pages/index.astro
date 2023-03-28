@@ -111,6 +111,14 @@ import Title from "../components/Title.astro";
       const twitter = document.getElementById("socials");
       const submit = document.getElementById("submit");
 
+      title.onclick = () => {
+        alert("bad");
+      };
+
+      title.ontouchstart = () => {
+        alert("bad");
+      };
+
       video.addEventListener("timeupdate", () => {
         if (video.currentTime > 0.6) {
           title.style.display = "none";
