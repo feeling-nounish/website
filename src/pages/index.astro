@@ -126,11 +126,15 @@ import Title from "../components/Title.astro";
 
         background.addEventListener("ended", () => {
           // In the future make the video loop the last few seconds ontil the website loads
-          document.documentElement.style.background = "white";
+          //   document.documentElement.style.background = "white";
           document.body.style.opacity = "0";
 
           window.location.href =
             links[Math.floor(Math.random() * links.length)];
+        });
+
+        window.addEventListener("pageshow", () => {
+          document.body.style.opacity = "1";
         });
       }
     </script>
