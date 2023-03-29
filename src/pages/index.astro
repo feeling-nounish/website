@@ -94,10 +94,7 @@ import Title from "../components/Title.astro";
         "https://www.youtube.com/watch?v=lOzCA7bZG_k",
       ];
 
-      const video = document.getElementsByTagName("video")[0];
-
-      video.addEventListener("click", () => video.play());
-
+      const background = document.getElementById("background");
       const title = document.getElementById("title");
       const noggle = document.getElementById("noggle");
       const jumpIn = document.getElementById("jump-in");
@@ -105,36 +102,51 @@ import Title from "../components/Title.astro";
       const twitter = document.getElementById("socials");
       const submit = document.getElementById("submit");
 
-      video.addEventListener("timeupdate", () => {
-        if (video.currentTime > 0.6) {
-          title.style.display = "none";
-          noggle.style.display = "none";
-          jumpIn.style.display = "none";
-          madeBy.style.display = "none";
-          twitter.style.display = "none";
-          submit.style.display = "none";
-        }
-      });
+      if (
+        background &&
+        title &&
+        noggle &&
+        jumpIn &&
+        madeBy &&
+        twitter &&
+        submit
+      ) {
+        background.addEventListener("click", () => background.play());
 
-      video.addEventListener("ended", () => {
-        const website = window.open(
-          links[Math.floor(Math.random() * links.length)]
-        );
+        background.addEventListener("timeupdate", () => {
+          if (background.currentTime > 0.6) {
+            title.style.display = "none";
+            noggle.style.display = "none";
+            jumpIn.style.display = "none";
+            madeBy.style.display = "none";
+            twitter.style.display = "none";
+            submit.style.display = "none";
+          }
+        });
 
-        if (website) {
-          website.document.body.style.background = "white";
-        }
+        background.addEventListener("ended", () => {
+          //   const website = window.open(
+          //     links[Math.floor(Math.random() * links.length)]
+          //   );
 
-        video.currentTime = 0;
-        video.pause();
+          title.style.display = "flex";
+          noggle.style.display = "flex";
+          jumpIn.style.display = "flex";
+          madeBy.style.display = "flex";
+          twitter.style.display = "flex";
+          submit.style.display = "flex";
 
-        title.style.display = "flex";
-        noggle.style.display = "flex";
-        jumpIn.style.display = "flex";
-        madeBy.style.display = "flex";
-        twitter.style.display = "flex";
-        submit.style.display = "flex";
-      });
+          background.currentTime = 0;
+          background.pause();
+
+          window.location.href =
+            links[Math.floor(Math.random() * links.length)];
+
+          //   if (website) {
+          //     website.document.body.style.background = "white";
+          //   }
+        });
+      }
     </script>
   </body>
 </html>
