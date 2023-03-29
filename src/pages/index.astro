@@ -133,7 +133,7 @@ import Title from "../components/Title.astro";
             links[Math.floor(Math.random() * links.length)];
         });
 
-        window.addEventListener("pageshow", () => {
+        function reset() {
           background.currentTime = 0;
           background.pause();
           document.documentElement.style.background = "#43faa7";
@@ -144,7 +144,10 @@ import Title from "../components/Title.astro";
           madeBy.style.display = "flex";
           twitter.style.display = "flex";
           submit.style.display = "flex";
-        });
+        }
+
+        window.addEventListener("pageshow", reset);
+        window.addEventListener("pagehide", reset);
       }
     </script>
   </body>
