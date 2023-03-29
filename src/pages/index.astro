@@ -93,6 +93,13 @@ import Title from "../components/Title.astro";
         "https://www.youtube.com/watch?v=lOzCA7bZG_k",
       ];
 
+      let website = links[Math.floor(Math.random() * links.length)];
+
+      const link = document.createElement("link");
+      link.rel = "prefetch";
+      link.href = website;
+      document.head.appendChild(link);
+
       const placeholder = document.getElementById("placeholder");
       const background = document.getElementById("background");
       const title = document.getElementById("title");
@@ -138,8 +145,7 @@ import Title from "../components/Title.astro";
           document.documentElement.style.background = "white";
           document.body.style.opacity = "0";
 
-          window.location.href =
-            links[Math.floor(Math.random() * links.length)];
+          window.location.href = website;
         });
 
         function reset() {
@@ -154,6 +160,9 @@ import Title from "../components/Title.astro";
           madeBy.style.display = "flex";
           twitter.style.display = "flex";
           //   submit.style.display = "flex";
+
+          website = links[Math.floor(Math.random() * links.length)];
+          link.href = website;
         }
 
         window.addEventListener("pageshow", reset);
