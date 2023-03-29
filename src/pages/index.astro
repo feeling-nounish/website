@@ -37,7 +37,7 @@ import Title from "../components/Title.astro";
     <Title />
     <JumpIn />
     <MadeBy />
-    <Submit />
+    <!-- <Submit /> -->
     <Background />
     <script>
       const links = [
@@ -66,6 +66,7 @@ import Title from "../components/Title.astro";
         "https://www.nounsapp.wtf/",
         "https://www.nogglefactory.wtf/",
         "https://alps.wtf/",
+        "https://www.premiere.wtf/",
         "https://nouns-crystal-ball.netlify.app/",
         "https://dune.com/hildobby/nouns",
         "https://www.figma.com/community/plugin/1045020359359636829/Nouns",
@@ -98,7 +99,7 @@ import Title from "../components/Title.astro";
       const jumpIn = document.getElementById("jump-in");
       const madeBy = document.getElementById("made-by");
       const twitter = document.getElementById("socials");
-      const submit = document.getElementById("submit");
+      //   const submit = document.getElementById("submit");
 
       if (
         background &&
@@ -106,19 +107,19 @@ import Title from "../components/Title.astro";
         noggle &&
         jumpIn &&
         madeBy &&
-        twitter &&
-        submit
+        twitter
+        // && submit
       ) {
         background.addEventListener("click", () => background.play());
 
         background.addEventListener("timeupdate", () => {
-          if (background.currentTime > 0.7) {
+          if (background.currentTime > 0.6) {
             title.style.display = "none";
             noggle.style.display = "none";
             jumpIn.style.display = "none";
             madeBy.style.display = "none";
             twitter.style.display = "none";
-            submit.style.display = "none";
+            // submit.style.display = "none";
           }
         });
 
@@ -141,7 +142,7 @@ import Title from "../components/Title.astro";
           jumpIn.style.display = "flex";
           madeBy.style.display = "flex";
           twitter.style.display = "flex";
-          submit.style.display = "flex";
+          //   submit.style.display = "flex";
         }
 
         window.addEventListener("pageshow", reset);
