@@ -125,26 +125,12 @@ import Title from "../components/Title.astro";
         });
 
         background.addEventListener("ended", () => {
-          //   const website = window.open(
-          //     links[Math.floor(Math.random() * links.length)]
-          //   );
-
-          title.style.display = "flex";
-          noggle.style.display = "flex";
-          jumpIn.style.display = "flex";
-          madeBy.style.display = "flex";
-          twitter.style.display = "flex";
-          submit.style.display = "flex";
-
-          background.currentTime = 0;
-          background.pause();
+          // In the future make the video loop the last few seconds ontil the website loads
+          document.documentElement.style.background = "white";
+          document.body.style.opacity = "0";
 
           window.location.href =
             links[Math.floor(Math.random() * links.length)];
-
-          //   if (website) {
-          //     website.document.body.style.background = "white";
-          //   }
         });
       }
     </script>
