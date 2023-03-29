@@ -1,10 +1,16 @@
-<video
-  id="background"
-  poster="/placeholder.webp"
-  preload="auto"
-  muted
-  playsinline
-  class="w-full h-full overflow-hidden fixed object-cover object-center cursor-pointer"
->
-  <source src="/background.mp4" type="video/mp4" />
-</video>
+<div>
+  <img
+    id="placeholder"
+    src="/placeholder.webp"
+    class="fixed w-full h-full object-cover object-center pointer-events-none"
+  />
+  <video
+    id="background"
+    preload="auto"
+    muted
+    playsinline
+    class="w-full h-full overflow-hidden fixed object-cover object-center cursor-pointer"
+  >
+    <source src="/background.mp4" type="video/mp4" />
+  </video>
+</div>

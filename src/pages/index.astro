@@ -93,6 +93,7 @@ import Title from "../components/Title.astro";
         "https://www.youtube.com/watch?v=lOzCA7bZG_k",
       ];
 
+      const placeholder = document.getElementById("placeholder");
       const background = document.getElementById("background");
       const title = document.getElementById("title");
       const noggle = document.getElementById("noggle");
@@ -102,6 +103,7 @@ import Title from "../components/Title.astro";
       //   const submit = document.getElementById("submit");
 
       if (
+        placeholder &&
         background &&
         title &&
         noggle &&
@@ -110,7 +112,10 @@ import Title from "../components/Title.astro";
         twitter
         // && submit
       ) {
-        background.addEventListener("click", () => background.play());
+        background.addEventListener("click", () => {
+          placeholder.style.display = "none";
+          background.play();
+        });
 
         background.addEventListener("timeupdate", () => {
           if (background.currentTime > 0.6) {
@@ -137,6 +142,7 @@ import Title from "../components/Title.astro";
           background.pause();
           document.documentElement.style.background = "#43faa7";
           document.body.style.opacity = "1";
+          placeholder.style.display = "flex";
           title.style.display = "flex";
           noggle.style.display = "flex";
           jumpIn.style.display = "flex";
