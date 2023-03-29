@@ -112,10 +112,15 @@ import Title from "../components/Title.astro";
         twitter
         // && submit
       ) {
-        background.addEventListener("click", () => {
+        background.addEventListener("play", () => {
           placeholder.style.display = "none";
-          background.play();
         });
+
+        background.addEventListener("pause", () => {
+          placeholder.style.display = "flex";
+        });
+
+        background.addEventListener("click", () => background.play());
 
         background.addEventListener("timeupdate", () => {
           if (background.currentTime > 0.6) {
