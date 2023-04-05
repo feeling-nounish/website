@@ -1,0 +1,36 @@
+---
+import Noggle from "../components/Noggle.astro";
+import Socials from "../components/Socials.astro";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/webp" href="/logo.webp" />
+    <link rel="preload" type="video/webm" href="/background.webm" />
+    <link
+      rel="preload"
+      href="/fonts/LondrinaSolid.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <style>
+      @font-face {
+        font-family: LondrinaSolid;
+        font-weight: 400;
+        src: url(/fonts/LondrinaSolid.ttf) format("truetype");
+      }
+    </style>
+  </head>
+  <body class="bg-[#43faa7] text-[#040404] h-full overflow-hidden">
+    <Noggle />
+    <Socials />
+    <slot />
+  </body>
+</html>

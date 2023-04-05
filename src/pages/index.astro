@@ -2,177 +2,150 @@
 import Background from "../components/Background.astro";
 import JumpIn from "../components/JumpIn.astro";
 import MadeBy from "../components/MadeBy.astro";
-import Noggle from "../components/Noggle.astro";
-import Socials from "../components/Socials.astro";
 import Submit from "../components/Submit.astro";
 import Title from "../components/Title.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="h-full overflow-hidden">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/webp" href="/logo.webp" />
-    <link rel="preload" type="video/webm" href="/background.webm" />
-    <link
-      rel="preload"
-      href="/fonts/LondrinaSolid.ttf"
-      as="font"
-      crossorigin="anonymous"
-    />
-    <meta name="generator" content={Astro.generator} />
-    <title>I'm feeling Nounish</title>
-    <style>
-      @font-face {
-        font-family: LondrinaSolid;
-        font-weight: 400;
-        src: url(/fonts/LondrinaSolid.ttf) format("truetype");
-      }
-    </style>
-  </head>
-  <body class="bg-[#43faa7] text-[#040404] h-full overflow-hidden">
-    <Noggle />
-    <Socials />
-    <Title />
-    <JumpIn />
-    <MadeBy />
-    <!-- <Submit /> -->
-    <Background />
-    <script>
-      const links = [
-        "https://nouns.wtf",
-        "https://nouns.gg",
-        "https://nounish.world",
-        "https://nounsai.wtf",
-        "https://noundation.wtf",
-        "https://thenounsmuseum.wtf/",
-        "https://noggles.wtf",
-        "https://nouns.build",
-        "https://prop.house",
-        "https://pog.nouns.gg",
-        "https://thatsgnar.ly",
-        "https://gnars.wtf",
-        "https://houseofnouns.xyz/",
-        "https://lilnouns.wtf/",
-        "https://purple.construction/",
-        "https://nounsagora.com/",
-        "https://zerobrand.co/",
-        "https://nounsvision.com/",
-        "https://nouns.substack.com/",
-        "https://nns.xyz/",
-        "https://www.federation.wtf/",
-        "https://auctions.wtf/",
-        "https://nounish-button.vercel.app/",
-        "https://www.nounsapp.wtf/",
-        "https://www.nogglefactory.wtf/",
-        "https://alps.wtf/",
-        "https://www.premiere.wtf/",
-        "https://nouns-crystal-ball.netlify.app/",
-        "https://dune.com/hildobby/nouns",
-        "https://www.figma.com/community/plugin/1045020359359636829/Nouns",
-        "https://www.youtube.com/channel/UC1Iqmi7SCEzWlWP-huyh9xw",
-        "https://lostnouns.wtf/",
-        "https://nounsense.xyz/",
-        "https://nounsarchive.wtf/",
-        "https://omega.build/",
-        "https://art.haus/",
-        "https://tings.wtf/",
-        "https://nouns.center/",
-        "https://composables.wtf/",
-        "https://count.wtf",
-        "https://bouncing.wtf",
-        "https://beacons.ai/thenounsquare",
-        "https://nouns.wtf/playground",
-        "https://www.imdb.com/title/tt21823412/",
-        "https://twitter.com/nouns_stories",
-        "https://twitter.com/0xigami",
-        "https://twitter.com/ripe0x",
-        "https://twitter.com/NounsOS",
-        "https://twitter.com/messhup",
-        "https://twitter.com/punk4156",
-        "https://twitter.com/nounsdao",
-        "https://www.youtube.com/watch?v=TZuVYV1WHmM",
-        "https://twitter.com/punk4156/status/1455186180698423297",
-        "https://www.youtube.com/watch?v=oa79nN4gMPs",
-        "https://www.youtube.com/watch?v=lOzCA7bZG_k",
-      ];
+<Layout title="I'm Feeling Nounish">
+  <Title />
+  <JumpIn />
+  <MadeBy />
+  <Submit />
+  <Background />
+  <script>
+    const links = [
+      "https://nouns.wtf",
+      "https://nouns.gg",
+      "https://nounish.world",
+      "https://nounsai.wtf",
+      "https://noundation.wtf",
+      "https://thenounsmuseum.wtf/",
+      "https://noggles.wtf",
+      "https://nouns.build",
+      "https://prop.house",
+      "https://pog.nouns.gg",
+      "https://thatsgnar.ly",
+      "https://gnars.wtf",
+      "https://houseofnouns.xyz/",
+      "https://lilnouns.wtf/",
+      "https://purple.construction/",
+      "https://nounsagora.com/",
+      "https://zerobrand.co/",
+      "https://nounsvision.com/",
+      "https://nouns.substack.com/",
+      "https://nns.xyz/",
+      "https://www.federation.wtf/",
+      "https://auctions.wtf/",
+      "https://nounish-button.vercel.app/",
+      "https://www.nounsapp.wtf/",
+      "https://www.nogglefactory.wtf/",
+      "https://alps.wtf/",
+      "https://www.premiere.wtf/",
+      "https://nouns-crystal-ball.netlify.app/",
+      "https://dune.com/hildobby/nouns",
+      "https://www.figma.com/community/plugin/1045020359359636829/Nouns",
+      "https://www.youtube.com/channel/UC1Iqmi7SCEzWlWP-huyh9xw",
+      "https://lostnouns.wtf/",
+      "https://nounsense.xyz/",
+      "https://nounsarchive.wtf/",
+      "https://omega.build/",
+      "https://art.haus/",
+      "https://tings.wtf/",
+      "https://nouns.center/",
+      "https://composables.wtf/",
+      "https://count.wtf",
+      "https://bouncing.wtf",
+      "https://beacons.ai/thenounsquare",
+      "https://nouns.wtf/playground",
+      "https://www.imdb.com/title/tt21823412/",
+      "https://twitter.com/nouns_stories",
+      "https://twitter.com/0xigami",
+      "https://twitter.com/ripe0x",
+      "https://twitter.com/NounsOS",
+      "https://twitter.com/messhup",
+      "https://twitter.com/punk4156",
+      "https://twitter.com/nounsdao",
+      "https://www.youtube.com/watch?v=TZuVYV1WHmM",
+      "https://twitter.com/punk4156/status/1455186180698423297",
+      "https://www.youtube.com/watch?v=oa79nN4gMPs",
+      "https://www.youtube.com/watch?v=lOzCA7bZG_k",
+    ];
 
-      let website = links[Math.floor(Math.random() * links.length)];
+    let website = links[Math.floor(Math.random() * links.length)];
 
-      const link = document.createElement("link");
-      link.rel = "prefetch";
-      link.href = website;
-      document.head.appendChild(link);
+    const link = document.createElement("link");
+    link.rel = "prefetch";
+    link.href = website;
+    document.head.appendChild(link);
 
-      const placeholder = document.getElementById("placeholder");
-      const background = document.getElementById("background");
-      const title = document.getElementById("title");
-      const noggle = document.getElementById("noggle");
-      const jumpIn = document.getElementById("jump-in");
-      const madeBy = document.getElementById("made-by");
-      const twitter = document.getElementById("socials");
-      //   const submit = document.getElementById("submit");
+    const placeholder = document.getElementById("placeholder");
+    const background = document.getElementById("background");
+    const title = document.getElementById("title");
+    const noggle = document.getElementById("noggle");
+    const jumpIn = document.getElementById("jump-in");
+    const madeBy = document.getElementById("made-by");
+    const twitter = document.getElementById("socials");
+    const submit = document.getElementById("submit");
 
-      if (
-        placeholder &&
-        background &&
-        title &&
-        noggle &&
-        jumpIn &&
-        madeBy &&
-        twitter
-        // && submit
-      ) {
-        background.addEventListener("play", () => {
-          placeholder.style.display = "none";
-        });
+    if (
+      placeholder &&
+      background &&
+      title &&
+      noggle &&
+      jumpIn &&
+      madeBy &&
+      twitter &&
+      submit
+    ) {
+      background.addEventListener("play", () => {
+        placeholder.style.display = "none";
+      });
 
-        background.addEventListener("pause", () => {
-          placeholder.style.display = "flex";
-        });
+      background.addEventListener("pause", () => {
+        placeholder.style.display = "flex";
+      });
 
-        background.addEventListener("click", () => background.play());
+      background.addEventListener("click", () => background.play());
 
-        background.addEventListener("timeupdate", () => {
-          if (background.currentTime > 0.6) {
-            title.style.display = "none";
-            noggle.style.display = "none";
-            jumpIn.style.display = "none";
-            madeBy.style.display = "none";
-            twitter.style.display = "none";
-            // submit.style.display = "none";
-          }
-        });
-
-        background.addEventListener("ended", () => {
-          // In the future make the video loop the last few seconds ontil the website loads
-          document.documentElement.style.background = "white";
-          document.body.style.opacity = "0";
-
-          window.location.href = website;
-        });
-
-        function reset() {
-          background.currentTime = 0;
-          background.pause();
-          document.documentElement.style.background = "#43faa7";
-          document.body.style.opacity = "1";
-          placeholder.style.display = "flex";
-          title.style.display = "flex";
-          noggle.style.display = "flex";
-          jumpIn.style.display = "flex";
-          madeBy.style.display = "flex";
-          twitter.style.display = "flex";
-          //   submit.style.display = "flex";
-
-          website = links[Math.floor(Math.random() * links.length)];
-          link.href = website;
+      background.addEventListener("timeupdate", () => {
+        if (background.currentTime > 0.6) {
+          title.style.display = "none";
+          noggle.style.display = "none";
+          jumpIn.style.display = "none";
+          madeBy.style.display = "none";
+          twitter.style.display = "none";
+          submit.style.display = "none";
         }
+      });
 
-        window.addEventListener("pageshow", reset);
-        window.addEventListener("pagehide", reset);
+      background.addEventListener("ended", () => {
+        // In the future make the video loop the last few seconds ontil the website loads
+        document.documentElement.style.background = "white";
+        document.body.style.opacity = "0";
+
+        window.location.href = website;
+      });
+
+      function reset() {
+        background.currentTime = 0;
+        background.pause();
+        document.documentElement.style.background = "#43faa7";
+        document.body.style.opacity = "1";
+        placeholder.style.display = "flex";
+        title.style.display = "flex";
+        noggle.style.display = "flex";
+        jumpIn.style.display = "flex";
+        madeBy.style.display = "flex";
+        twitter.style.display = "flex";
+        submit.style.display = "flex";
+
+        website = links[Math.floor(Math.random() * links.length)];
+        link.href = website;
       }
-    </script>
-  </body>
-</html>
+
+      window.addEventListener("pageshow", reset);
+      window.addEventListener("pagehide", reset);
+    }
+  </script>
+</Layout>
